@@ -1,0 +1,1327 @@
+It is very common to get confused because Microsoft has changed the names and technologies several times. Let's organize everything from the foundation.
+
+Think of building a web application like building a house:
+
+.NET = the land + building framework (the platform/runtime)
+ASP.NET Core = the tools for building the web application
+Entity Framework Core (EF Core) = the tool for talking to the database
+SQL Server / MySQL / PostgreSQL = where your data lives
+C# = the language you write your code in
+1. What is .NET?
+
+.NET is Microsoft's development platform.
+
+It provides:
+
+Runtime to execute applications
+Libraries
+Tools
+Programming language support (mainly C#)
+
+You can build:
+
+Web applications
+Desktop applications
+Mobile applications
+APIs
+Cloud services
+Games
+
+Example:
+
+Console.WriteLine("Hello .NET");
+
+This is a simple .NET application.
+
+2. What was .NET Framework?
+
+Before modern .NET, Microsoft had:
+
+.NET Framework (2002)
+
+It was Windows-only.
+
+Used for:
+
+ASP.NET Web Forms
+ASP.NET MVC
+Windows Forms
+WPF applications
+
+Example:
+
+Windows
+   |
+.NET Framework
+   |
+ASP.NET MVC Application
+
+Limitations:
+
+Only Windows
+Heavy
+Not designed for cloud applications
+
+Many old enterprise applications still use it.
+
+3. What is .NET Core?
+
+Microsoft created a new platform:
+
+.NET Core (2016)
+
+It was:
+
+Cross-platform
+Faster
+Open-source
+Cloud-friendly
+
+It could run on:
+
+Windows
+Linux
+macOS
+
+Example:
+
+Windows
+Linux
+macOS
+   |
+.NET Core
+   |
+Application
+
+It was separate from .NET Framework.
+
+4. What is modern .NET?
+
+Starting from .NET 5, Microsoft removed the "Core" name.
+
+The timeline:
+
+.NET Framework
+       |
+       |
+       +---- .NET Core 1.x
+       |
+       +---- .NET Core 2.x
+       |
+       +---- .NET Core 3.1
+       
+       ↓
+
+.NET 5
+.NET 6
+.NET 7
+.NET 8
+.NET 9
+.NET 10
+
+Today when people say:
+
+".NET"
+
+they usually mean modern cross-platform .NET.
+
+So:
+
+.NET Core = old name
+.NET 5+ = new unified .NET
+5. What is ASP.NET?
+
+ASP.NET is Microsoft's web development framework.
+
+It allows you to create:
+
+Websites
+Web applications
+REST APIs
+Web services
+
+Originally:
+
+.NET Framework
+       |
+    ASP.NET
+       |
+Web Application
+
+Examples:
+
+ASP.NET Web Forms
+ASP.NET MVC
+ASP.NET Web API
+6. What is ASP.NET Core?
+
+ASP.NET Core is the modern version of ASP.NET.
+
+It runs on modern .NET.
+
+Architecture:
+
+Browser
+   |
+HTTP Request
+   |
+ASP.NET Core
+   |
+C# Code
+   |
+Database
+
+You use ASP.NET Core to create:
+
+MVC Applications
+
+Example:
+
+Controller
+     |
+     |
+   Model
+     |
+     |
+   View
+Web APIs
+
+Example:
+
+Mobile App
+     |
+     |
+ASP.NET Core API
+     |
+     |
+Database
+Razor Pages
+
+Server-side web pages.
+
+Blazor
+
+Building web UI using C#.
+
+7. What is Entity Framework?
+
+Entity Framework (EF) is an ORM.
+
+ORM means:
+
+Object Relational Mapping
+
+It allows you to work with database tables using C# objects.
+
+Without EF:
+
+SELECT * FROM Students
+
+With EF:
+
+var students = context.Students.ToList();
+
+EF converts your C# code into SQL.
+
+Entity Framework versions
+Entity Framework 6 (EF6)
+
+Old version.
+
+Works mainly with:
+
+.NET Framework
++
+ASP.NET MVC
+
+Example:
+
+ASP.NET MVC 5
+       |
+      EF6
+       |
+    SQL Server
+Entity Framework Core (EF Core)
+
+Modern version.
+
+Works with:
+
+.NET 6/7/8/9
++
+ASP.NET Core
+
+Example:
+
+ASP.NET Core
+       |
+   EF Core
+       |
+ SQL Server
+
+EF Core is the one you should learn for new projects.
+
+8. How ASP.NET Core and EF Core work together
+
+Suppose you build an online shopping website.
+
+Architecture:
+
+                User Browser
+                     |
+                     |
+              ASP.NET Core MVC
+                     |
+        --------------------------
+        |                        |
+   Controllers              Services
+                                |
+                                |
+                           EF Core
+                                |
+                                |
+                          SQL Server
+
+Example:
+
+User opens:
+
+/Products
+
+Request reaches:
+
+ProductController
+
+Controller asks EF Core:
+
+var products = _context.Products.ToList();
+
+EF Core generates:
+
+SELECT * FROM Products
+
+Database returns data.
+
+ASP.NET Core sends HTML back.
+
+9. Where does Code First / Database First fit?
+
+They belong to Entity Framework.
+
+Code First
+
+You start with C#:
+
+C# Classes
+     |
+     |
+EF Core Migration
+     |
+     |
+Database
+
+Example:
+
+public class Product
+{
+    public int Id {get;set;}
+    public string Name {get;set;}
+}
+
+EF creates the table.
+
+Database First
+
+You start with SQL:
+
+Database
+     |
+     |
+Scaffold
+     |
+     |
+C# Classes
+
+Example:
+
+Existing database:
+
+Products Table
+
+EF generates:
+
+Product.cs
+10. A complete modern application stack
+
+A typical enterprise application:
+
+Frontend
+(React / Angular / MVC Views)
+          |
+          |
+          HTTP
+          |
+          |
+ASP.NET Core Web API
+          |
+          |
+Business Logic
+          |
+          |
+Entity Framework Core
+          |
+          |
+SQL Server Database
+11. What should you learn today?
+
+For a new developer, a good path is:
+
+Step 1
+
+Learn:
+
+C#
+OOP concepts
+LINQ
+
+↓
+
+Step 2
+
+Learn:
+
+.NET fundamentals
+
+↓
+
+Step 3
+
+Learn:
+
+ASP.NET Core MVC
+ASP.NET Core Web API
+
+↓
+
+Step 4
+
+Learn:
+
+Entity Framework Core
+Code First
+Database First
+Migrations
+
+↓
+
+Step 5
+
+Learn:
+
+Authentication (Identity/JWT)
+Dependency Injection
+Middleware
+Deployment
+Simple final picture
+C#
+ |
+ |
+.NET
+ |
+ |
+ASP.NET Core  ---------> Creates Web Apps/APIs
+ |
+ |
+EF Core --------------> Communicates with Database
+ |
+ |
+SQL Server ------------> Stores Data
+
+If you are starting today, focus on C# + .NET + ASP.NET Core + EF Core. The older terms like ASP.NET Framework, .NET Framework, EF6, Web Forms are mainly for maintaining older applications.
+
+
+================================================
+In Entity Framework (EF), there are mainly three types of loading for related data (navigation properties):
+
+Eager Loading
+Lazy Loading
+Explicit Loading
+1. Eager Loading
+
+Eager loading loads the related data together with the main entity in a single query (or related queries).
+
+You use the Include() method.
+
+Example:
+
+var country = db.Countries
+                .Include(c => c.States)
+                .FirstOrDefault();
+
+Here:
+
+Country data is loaded.
+Related States data is loaded immediately.
+
+Generated SQL is similar to:
+
+SELECT *
+FROM Country
+LEFT JOIN State
+ON Country.CountryId = State.CountryId
+When to use:
+You know you need related data.
+Avoids multiple database calls.
+
+Example:
+
+foreach(var state in country.States)
+{
+    Console.WriteLine(state.StateName);
+}
+
+No extra database query is fired.
+
+2. Lazy Loading
+
+Lazy loading loads related data only when you access the navigation property.
+
+Example:
+
+var country = db.Countries.FirstOrDefault();
+
+var states = country.States;
+
+When this line executes:
+
+country.States
+
+EF automatically sends a query to get states.
+
+For lazy loading:
+
+Navigation properties must usually be virtual.
+
+Example:
+
+public virtual ICollection<State> States { get; set; }
+Enable lazy loading in EF Core:
+
+Install:
+
+Microsoft.EntityFrameworkCore.Proxies
+
+Enable:
+
+optionsBuilder
+.UseLazyLoadingProxies()
+.UseSqlServer(connectionString);
+Problem:
+
+It can create the N+1 query problem.
+
+Example:
+
+var countries = db.Countries.ToList();
+
+foreach(var country in countries)
+{
+    Console.WriteLine(country.States.Count);
+}
+
+If there are 100 countries:
+
+1 query for countries
+100 queries for states
+
+Total = 101 queries.
+
+3. Explicit Loading
+
+Explicit loading means you manually tell EF when to load related data.
+
+Example:
+
+var country = db.Countries.First();
+
+db.Entry(country)
+  .Collection(c => c.States)
+  .Load();
+
+Now states are loaded.
+
+You decide when the database call happens.
+
+When to use:
+You don't always need related data.
+You want control over when loading occurs.
+Comparison
+Type	Loads When	Method	Control
+Eager Loading	Immediately	Include()	Low
+Lazy Loading	When property is accessed	virtual navigation property	Automatic
+Explicit Loading	When you manually request	.Load()	High
+In Database First
+
+Your generated class:
+
+public virtual ICollection<State> States { get; set; }
+
+supports Lazy Loading if configured, but you can still use:
+
+.Include(c => c.States)
+
+for eager loading or:
+
+.Entry(country).Collection(c => c.States).Load();
+
+for explicit loading.
+
+So, in EF Core and EF 6, the three standard loading types are:
+
+1. Eager Loading
+2. Lazy Loading
+3. Explicit Loading
+=========================================
+Loading Related Data
+
+You already learned:
+
+Eager Loading
+.Include()
+Lazy Loading
+virtual
+Explicit Loading
+.Load()
+
+Also learn:
+
+ThenInclude
+
+For multiple levels:
+
+Example:
+
+Country
+   |
+ State
+   |
+ City
+
+Code:
+
+context.Countries
+       .Include(c => c.States)
+       .ThenInclude(s => s.Cities);
+============================================================
+
+Architecture
+ADO.NET
+Application
+     |
+ADO.NET
+     |
+SQL Server
+
+You write SQL queries yourself.
+
+Entity Framework
+Application
+     |
+Entity Framework
+     |
+ADO.NET
+     |
+SQL Server
+
+EF internally uses ADO.NET to communicate with the database.
+
+Example: Read Data
+Using ADO.NET
+string connectionString = "...";
+
+using(SqlConnection con = new SqlConnection(connectionString))
+{
+    con.Open();
+
+    SqlCommand cmd = new SqlCommand(
+        "SELECT * FROM Country", con);
+
+    SqlDataReader reader = cmd.ExecuteReader();
+
+    while(reader.Read())
+    {
+        Console.WriteLine(reader["CountryName"]);
+    }
+}
+
+You have to:
+
+Open connection
+Write SQL
+Execute command
+Read data
+Close connection
+
+Using EF
+var countries = context.Countries.ToList();
+
+foreach(var country in countries)
+{
+    Console.WriteLine(country.CountryName);
+}
+
+No SQL is required for this query.
+
+Example: Insert Data
+ADO.NET
+SqlCommand cmd = new SqlCommand(
+    "INSERT INTO Country(CountryName) VALUES(@name)", con);
+
+cmd.Parameters.AddWithValue("@name", "India");
+
+cmd.ExecuteNonQuery();
+EF
+var country = new Country
+{
+    CountryName = "India"
+};
+
+context.Countries.Add(country);
+
+context.SaveChanges();
+
+EF generates the INSERT statement for you.
+
+Comparison Table
+Feature	ADO.NET	Entity Framework
+Level	Low-level data access	High-level ORM
+SQL Writing	Manual	Usually not needed (LINQ)
+Database Mapping	Manual	Automatic entity mapping
+CRUD Operations	More code	Less code
+Learning Curve	Easier basics, but more boilerplate	More concepts to learn
+Performance	Slightly faster	Slight overhead due to ORM
+Relationships	Manual joins and mapping	Navigation properties and Include()
+Change Tracking	Manual	Automatic
+Migrations	No	Yes (Code First)
+Productivity	Lower	Higher
+Change Tracking
+ADO.NET
+
+If you change a value:
+
+employee.Name = "John";
+
+Nothing happens automatically. You must write an UPDATE query yourself.
+
+EF
+employee.Name = "John";
+
+context.SaveChanges();
+
+EF detects the change and generates the appropriate UPDATE statement.
+
+Relationships
+
+Suppose:
+
+Country
+    |
+    |
+States
+ADO.NET
+
+You write the join:
+
+SELECT *
+FROM Country
+JOIN State
+ON Country.CountryId = State.CountryId
+
+Then manually populate objects.
+
+EF
+var countries = context.Countries
+                       .Include(c => c.States)
+                       .ToList();
+
+EF loads the related data into navigation properties.
+
+Performance
+ADO.NET
+Faster
+Less memory usage
+No change tracking
+Best for very high-performance scenarios
+EF
+Slightly slower because it:
+Maps rows to objects
+Tracks changes
+Handles relationships
+Builds SQL from LINQ
+
+For most business applications, the productivity benefits outweigh the small performance cost.
+
+When should you use ADO.NET?
+
+Use ADO.NET when:
+
+You need maximum performance.
+You're executing complex stored procedures.
+You're working with bulk data imports/exports.
+You need fine-grained control over SQL execution.
+
+Example:
+
+SqlBulkCopy
+
+is available through ADO.NET for fast bulk inserts.
+
+When should you use EF?
+
+Use EF when:
+
+Building ASP.NET Core applications.
+Developing CRUD applications.
+Working with many related tables.
+You want faster development and easier maintenance.
+
+This is the most common choice for modern .NET business applications.
+
+
+
+ADO.NET is a low-level data access technology where developers write SQL queries, manage connections, and map data manually.
+
+Entity Framework is an ORM built on top of ADO.NET. It allows developers to work with C# objects and LINQ instead of writing most SQL manually. EF provides features such as change tracking, relationship management, lazy/eager loading, and automatic CRUD operations, making development faster and code easier to maintain.
+
+Which should you learn?
+
+Since you're already learning Entity Framework Database First, it's still important to know the basics of ADO.NET because:
+
+EF internally uses ADO.NET.
+Many interviews ask about both.
+Some advanced scenarios (like SqlBulkCopy or certain stored procedure patterns) still require ADO.NET.
+
+A strong .NET developer is comfortable with both, even if EF is the primary tool used day to day.
+
+===================================================================
+Request
+   ↓
+Model Binding
+   ↓
+FluentValidation runs
+   ↓
+ModelState filled (if errors)
+   ↓
+Controller Action
+   ↓
+if (!ModelState.IsValid) check
+
+------------------------------------------
+In Angular, an interceptor is a special service that sits between your application’s HttpClient and the server.
+It allows you to intercept, inspect, and modify HTTP requests before they are sent, and responses before they are processed by your application.
+
+diffrent type of intercepter
+logging
+error handling 
+adding header to request
+Authentication Interceptor
+---------------------------------------------
+The SP has @Result INT OUTPUT and SET NOCOUNT ON. This means:
+
+Dapper's ExecuteAsync returns 0 (NOCOUNT suppresses rows-affected)
+The OUTPUT parameter is never read
+So the controller check result == 1 always fails → always returns "Update failed" even when the update worked
+
+--------------------------------------------
+In SQL Server triggers, inserted and deleted are special temporary tables available inside a trigger.
+
+Think of them like this:
+
+inserted = NEW data
+deleted = OLD data
+
+deleted table
+
+Contains old values (before update).
+
+ShippingId	Remarks
+1	First
+inserted table
+
+Contains new values (after update).
+
+ShippingId	Remarks
+1	Updated
+
+
+So for UPDATE:
+
+deleted  = before update
+inserted = after update
+----------------------------------------------
+
+[''] → empty string
+[] → null / no initial value
+[d?.value ?? ''] → dynamic value with fallback
+
+originalbankName: ['']
+
+"This initializes the form control with an empty string. It is mainly used when creating a new form where no existing data needs to be loaded."
+
+originalbankName: [d?.originalbankName ?? '']
+
+"This initializes the control dynamically. If data (d.originalbankName) is available, it populates the form with that value; 
+otherwise it falls back to an empty string using the nullish coalescing operator (??).
+ This is useful for edit forms or API-loaded data."
+ 
+ -----------------------------------------------
+ Serilog is a popular open-source logging library for .NET applications. It provides structured logging,
+ which means logs are stored as data with named properties rather than just plain text messages.
+
+Entity: Serilog
+
+Why use Serilog?
+
+Logging helps you understand what your application is doing, diagnose issues, monitor performance, and troubleshoot production problems.
+
+1.Structured Logging
+Instead of writing:
+logger.LogInformation("User 123 placed an order for $50");
+You can write:
+Log.Information(
+    "User {UserId} placed an order for {Amount}",
+    123,
+    50);
+	
+2. Multiple Log Destinations (Sinks)
+
+Serilog can write logs to many places, including:
+
+Console
+Text files
+Databases
+Elasticsearch
+Seq
+Azure services
+Application Insights
+
+These destinations are called sinks.
+
+3. Better Debugging
+
+You can capture detailed information such as:
+
+Exceptions
+Request IDs
+User IDs
+Execution times
+Custom business data
+
+Example:
+
+try
+{
+    // code
+}
+catch (Exception ex)
+{
+    Log.Error(ex, "Failed to process order {OrderId}", orderId);
+}
+
+4. Integration with ASP.NET Core
+
+Serilog integrates seamlessly with the built-in .NET logging system and can log:
+
+HTTP requests
+Middleware events
+Application startup/shutdown
+Dependency injection activities
+
+
+In Serilog, Enrich means automatically adding extra information (properties) to every log event.
+
+Instead of manually including the same information in every log message, enrichers attach that information automatically.
+AutoCreateSqlTable = true
+This does not create a new row for every log. It tells Serilog:
+"If the table doesn't already exist, create it automatically."
+
+So:
+
+Table exists → Serilog inserts rows.
+Table doesn't exist → Serilog creates the table, then inserts rows.
+
+Serilog Log Levels
+
+From lowest to highest severity:
+
+Verbose
+Debug
+Information
+Warning
+Error
+Fatal
+
+
+---------------------------------------
+A component is the basic building block of an Angular application.
+ It controls a portion of the screen (view).
+ @Component(...) = metadata (configuration) about the component.
+ 
+ --------------------------------------
+ It allows you to access and interact with elements/components inside 
+ your template after Angular initializes the view.
+ 
+ @ViewChild is available after the view is initialized
+ ===============================================================
+ refreshtoken   -   RandomNumberGenerator in base64 string  formate
+refreshTokenExpiry   - 1 day
+
+accesstoken  - using jwt key,issuer,audience
+accessTokenExpiry  - 30 minute
+
+
+In .NET (especially for APIs using JWT authentication),
+Access Tokens and Refresh Tokens are commonly used together to provide
+ secure authentication while minimizing the need for users to log in repeatedly.
+ 
+An Access Token is a short-lived token that a client (web app, mobile app, etc.) 
+sends with API requests to prove the user's identity.
+ Characteristics
+Usually a JWT (JSON Web Token).
+Contains user information (claims).
+Short expiration time (e.g., 15–60 minutes).
+Used to access protected API endpoints.
+
+A Refresh Token is a long-lived token used to obtain a new access token when the old one expires.
+ Characteristics
+Usually stored in a database.
+Longer expiration (days, weeks, or months).
+Never used to access APIs directly.
+Used only for generating new access tokens.
+
+
+
+Login
+   │
+   ▼
+Access Token (15 min)
+Refresh Token (7 days)
+   │
+   ▼
+Access token expires
+   │
+   ▼
+Send Refresh Token
+   │
+   ▼
+Get New Access Token
+
+------------------------------------------------------
+ORM (Object-Relational Mapping) is a technique that allows developers to interact with a database using object-oriented programming instead of writing SQL queries.
+using dapper, entity framework,
+==================================================================================
+
+BEGIN TRY
+    BEGIN TRANSACTION;    
+
+    IF @@ROWCOUNT = 0
+    BEGIN
+        SET @Result = 0;
+        ROLLBACK TRANSACTION;
+        RETURN;
+    END
+
+    SET @Result = 1;
+
+    COMMIT TRANSACTION;
+END TRY
+BEGIN CATCH
+    IF @@TRANCOUNT > 0
+        ROLLBACK TRANSACTION;
+
+    SET @Result = -1; 
+
+    THROW;
+END CATCH
+
+=====================================================================================
+
+SqlConnection → Opens the connection to SQL Server.
+SqlCommand → Specifies the stored procedure to execute.
+SqlDataAdapter → Executes the command and fills a DataSet.
+DataSet → Holds multiple DataTables (one for each result set).
+DataTable → Represents a single table from the DataSet.
+
+
+Methods:
+
+ExecuteReader() → returns rows
+ExecuteScalar() → returns a single value
+ExecuteNonQuery() → INSERT, UPDATE, DELETE
+ExecuteXmlReader() → XML data
+
+
+| Monolithic Architecture                   | Microservices Architecture              |
+| ----------------------------------------- | --------------------------------------- |
+| One large application                     | Many small services                     |
+| Single deployment                         | Independent deployments                 |
+| Shared database                           | Often separate databases                |
+| Harder to scale specific features         | Scale only the services that need it    |
+| Changes can affect the entire application | Changes usually affect only one service |
+======================================================================================
+
+ Scaffold-DbContext 'Server=Kajal\SQL2019;Database=KAJAL_Learning;User Id=developer;Password=Kajal@123;TrustServerCertificate=True;'
+ Microsoft.EntityFrameworkCore.SqlServer -O Models -f
+ 
+======================================================================================
+ Generics in C# allow you to write type-safe, reusable code that works with different data types without duplicating code.
+ 
+ =====================================================================================
+Signals are a reactive state management feature introduced in Angular 16 (and enhanced in later versions).
+ They provide a simple way to manage state and automatically update the UI when the state changes,
+ without relying heavily on RxJS for local component state.
+ =====================================================================================
+A JWT (JSON Web Token) is a compact, secure way to transmit information between a client (browser/mobile app) and a server.
+It's commonly used for authentication and authorization in web applications.
+
+JWT Flow
+
+Here's the typical flow:
+
++--------+            +-----------+
+| Client |            |  Server   |
++--------+            +-----------+
+     |                      |
+1. Login (username/password)
+     |--------------------->|
+     |                      |
+2. Validate credentials
+     |<---------------------|
+     |   JWT Token          |
+     |
+3. Store Token
+(Local Storage/Session Storage/Cookie)
+     |
+4. API Request
+Authorization: Bearer <JWT>
+     |--------------------->|
+     |                      |
+5. Verify JWT
+     |                      |
+6. Return Protected Data
+     |<---------------------|
+Step 1: User Logs In
+
+The user sends their credentials to the server.
+
+Request
+
+POST /login
+
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+Step 2: Server Validates User
+
+The server checks the username and password against the database.
+
+If valid, it creates a JWT.
+
+Step 3: Server Creates JWT
+
+A JWT has three parts separated by dots (.):
+
+xxxxx.yyyyy.zzzzz
+1. Header
+
+Contains token metadata.
+
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+
+After Base64 encoding:
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+2. Payload
+
+Contains claims (data).
+
+{
+  "id": 101,
+  "name": "John",
+  "role": "Admin",
+  "exp": 1750000000
+}
+
+Example claims:
+
+User ID
+Username
+Role
+Expiration time (exp)
+Issued at (iat)
+3. Signature
+
+The server signs the token using a secret key.
+
+HMACSHA256(
+   Header + "." + Payload,
+   SecretKey
+)
+
+Final JWT:
+
+Header.Payload.Signature
+
+Example:
+
+eyJhbGc...eyJpZCI...AbCdEf123XYZ
+Step 4: Client Stores JWT
+
+Common storage options:
+
+HttpOnly Cookie (recommended for browser apps)
+Local Storage
+Session Storage
+Step 5: Client Sends JWT
+
+Every protected request includes the token.
+
+GET /profile
+
+Authorization: Bearer eyJhbGc...
+Step 6: Server Verifies JWT
+
+The server:
+
+Extracts the token.
+Verifies the signature using the secret (or public key for asymmetric algorithms like RS256).
+Checks expiration (exp).
+Reads the payload.
+
+If valid:
+
+Allow Request
+
+Otherwise:
+
+401 Unauthorized
+JWT Structure
+Header
+{
+ "alg":"HS256",
+ "typ":"JWT"
+}
+
+        ↓
+
+Payload
+{
+ "id":101,
+ "role":"Admin",
+ "exp":1750000000
+}
+
+        ↓
+
+Signature
+HMACSHA256(
+ Header + Payload,
+ SecretKey
+)
+Example in Node.js
+
+Generate a token:
+
+const jwt = require('jsonwebtoken');
+
+const token = jwt.sign(
+  {
+    id: 1,
+    role: 'Admin'
+  },
+  'mySecretKey',
+  {
+    expiresIn: '1h'
+  }
+);
+
+console.log(token);
+
+Verify a token:
+
+const decoded = jwt.verify(token, 'mySecretKey');
+
+console.log(decoded);
+JWT with Angular
+Login
+this.http.post('/login', credentials)
+  .subscribe((response: any) => {
+    localStorage.setItem('token', response.token);
+  });
+Send JWT Automatically
+
+Create an HTTP interceptor:
+
+intercept(req: HttpRequest<any>, next: HttpHandler) {
+
+  const token = localStorage.getItem('token');
+
+  if (token) {
+    req = req.clone({
+      setHeaders: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+  }
+
+  return next.handle(req);
+}
+
+Every API request will include:
+
+Authorization: Bearer eyJhbGc...
+Why Use JWT?
+
+Advantages:
+
+Stateless authentication (server doesn't need to store session data)
+Works well across different domains and services
+Compact and easy to send in HTTP headers
+Suitable for REST APIs and microservices
+
+Limitations:
+
+A JWT cannot usually be invalidated before it expires unless you add a revocation or blacklist mechanism.
+If stored insecurely (for example, in localStorage), it can be stolen by malicious scripts if your application has an XSS vulnerability.
+Tokens should contain only necessary information; avoid storing sensitive data because the payload is only Base64-encoded, not encrypted.
+Complete Authentication Flow
+User
+  |
+  | Login (email/password)
+  v
+Server
+  |
+  | Validate credentials
+  v
+Generate JWT
+  |
+  v
+Send JWT
+  |
+  v
+Client stores token
+  |
+  | API Request
+  | Authorization: Bearer <JWT>
+  v
+Server verifies signature and expiration
+  |
+  +--> Valid   → Return protected data
+  |
+  +--> Invalid → 401 Unauthorized
+  
+  _____ SMTP4Dev

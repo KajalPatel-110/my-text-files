@@ -1,0 +1,147 @@
+SELECT
+    SCHEMA_NAME(schema_id) AS SchemaName,
+    name AS StoredProcedureName,
+    create_date,
+    modify_date
+FROM sys.procedures
+ORDER BY modify_date DESC;
+
+===============================================================
+The difference is that **`Pop3Client`** and an **email parser** solve two different problems:
+
+* **`Pop3Client`** retrieves emails from a mail server.
+* **An email parser** interprets the content of an email after you've retrieved it.
+
+### Comparison
+
+| Feature             | `Pop3Client`                                   | Email Parser                                     |
+| ------------------- | ---------------------------------------------- | ------------------------------------------------ |
+| Purpose             | Connects to a POP3 server and downloads emails | Reads and extracts information from an email     |
+| Protocol            | POP3                                           | None (parses MIME/RFC 5322 email format)         |
+| Retrieves emails    | ✅ Yes                                          | ❌ No                                             |
+| Parses headers      | Basic                                          | ✅ Yes                                            |
+| Parses body         | Returns raw message                            | ✅ Extracts plain text, HTML, etc.                |
+| Handles attachments | Downloads with the message                     | ✅ Extracts attachment details and content        |
+| Typical libraries   | MailKit, OpenPop.NET                           | MimeKit, System.Net.Mail, MailKit's MIME classes |
+
+## `Pop3Client`
+
+A POP3 client communicates with an email server.
+
+Example using **MailKit**:
+
+```csharp
+using MailKit.Net.Pop3;
+
+using var client = new Pop3Client();
+
+client.Connect("pop.gmail.com", 995, true);
+client.Authenticate("user@gmail.com", "password");
+
+var message = client.GetMessage(0);
+
+client.Disconnect(true);
+```
+
+Here:
+
+* Connects to the server.
+* Authenticates.
+* Downloads the email.
+
+It does **not** automatically extract fields into your business objects. It simply retrieves the message.
+
+---
+
+## Email Parser
+
+An email parser reads the downloaded email and extracts useful information.
+
+For example:
+
+```csharp
+Console.WriteLine(message.Subject);
+Console.WriteLine(message.TextBody);
+Console.WriteLine(message.HtmlBody);
+
+foreach (var attachment in message.Attachments)
+{
+    Console.WriteLine(attachment.ContentType);
+}
+```
+
+The parser understands:
+
+* Subject
+* From
+* To
+* CC
+* BCC
+* HTML body
+* Plain text body
+* Attachments
+* Inline images
+* MIME structure
+* Headers
+
+---
+
+## Together
+
+Typically you use them together:
+
+```
+POP3 Server
+      │
+      ▼
+ Pop3Client
+      │
+Downloads email
+      ▼
+ MimeMessage
+      │
+      ▼
+ Email Parser (MimeKit)
+      │
+      ▼
+Extract Subject, Body, Attachments, etc.
+```
+
+---
+
+## Example with MailKit + MimeKit
+
+```csharp
+using MailKit.Net.Pop3;
+
+using var client = new Pop3Client();
+
+client.Connect("pop.gmail.com", 995, true);
+client.Authenticate("user@gmail.com", "password");
+
+var message = client.GetMessage(0);
+
+Console.WriteLine(message.Subject);
+Console.WriteLine(message.From);
+Console.WriteLine(message.Date);
+Console.WriteLine(message.TextBody);
+
+client.Disconnect(true);
+```
+
+Here:
+
+* `Pop3Client` downloads the message.
+* `MimeMessage` (from MimeKit) acts as the parser, exposing properties like `Subject`, `TextBody`, and `Attachments`.
+
+---
+
+## Which should you use?
+
+It depends on your goal:
+
+* **Read emails from a mailbox** → Use a POP3 client (or, more commonly today, an IMAP client if you need folder support and synchronization).
+* **Extract data from email content** → Use an email parser such as **MimeKit**.
+* **Build an application that reads emails** → Use both: a client library (MailKit's `Pop3Client` or `ImapClient`) to fetch messages and MimeKit to parse them.
+
+In modern .NET applications, **MailKit + MimeKit** is the most common combination because MailKit handles the mail protocols (POP3/IMAP/SMTP) while MimeKit handles parsing and composing MIME email messages.

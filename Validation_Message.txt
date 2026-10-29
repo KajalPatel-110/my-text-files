@@ -1,0 +1,225 @@
+| Input Type      | Common Validations                                                              |
+| ----------------| ------------------------------------------------------------------------------- |
+|  text           | required, minLength, maxLength, pattern, trim spaces                            |
+|  email          | required, valid email format, maxLength                                         |
+|  password       | required, minLength, maxLength, uppercase, lowercase, number, special character |
+|  number         | required, min, max, integer/decimal validation                                  |
+|  tel            | required, phone format, length                                                  |
+|  url            | required, valid URL format                                                      |
+|  date           | required, min date, max date, future/past date, date formate                    |
+|  datetime-local | required, date-time range                                                       |
+|  time           | required, valid time range                                                      |
+|  month          | required, valid month                                                           |
+|  week           | required, valid week                                                            |
+|  search         | same as text                                                                    |
+|  textarea       | required, minLength, maxLength                                                  |
+|  radio          | required selection                                                              |
+|  checkbox       | required (if mandatory), min/max selections                                     |
+|  select         | required selection                                                              |
+|  file           | required, file type, file size, file count                                      |
+|  color          | valid color value                                                               |
+|  range          | min, max, step                                                                  |
+|  hidden         | usually server-side validation only                                             |
+-----------------------------------------------------------------------------------------------------
+
+
+VALIDATION LIST WITH ERROR MESSAGES
+
+GENERAL
+
+* Required → "This field is required."
+* Empty after trim → "This field cannot be empty."
+* Min Length → "Must be at least {min} characters."
+* Max Length → "Cannot exceed {max} characters."
+* Exact Length → "Must be exactly {length} characters."
+* Invalid Characters → "Contains invalid characters."
+* Special Characters Not Allowed → "Special characters are not allowed."
+* Numbers Not Allowed → "Numbers are not allowed."
+* Letters Only → "Only letters are allowed."
+* Alphanumeric Only → "Only letters and numbers are allowed."
+
+NUMBER
+
+* Invalid Number → "Enter a valid number."
+* Positive Number Only → "Value must be greater than 0."
+* Non-Negative Number → "Value cannot be negative."
+* Integer Only → "Value must be a whole number."
+* Decimal Not Allowed → "Decimal values are not allowed."
+* Min Value → "Value must be at least {min}."
+* Max Value → "Value cannot exceed {max}."
+* Range → "Value must be between {min} and {max}."
+* Multiple Of → "Value must be a multiple of {value}."
+
+AMOUNT
+
+* Amount Required → "Amount is required."
+* Invalid Amount → "Enter a valid amount."
+* Amount Greater Than Zero → "Amount must be greater than 0."
+* Amount Cannot Be Negative → "Amount cannot be negative."
+* Decimal Precision → "Amount can have up to {decimalPlaces} decimal places."
+* Amount Exceeds Limit → "Amount exceeds the allowed limit."
+
+QUANTITY
+
+* Quantity Required → "Quantity is required."
+* Invalid Quantity → "Enter a valid quantity."
+* Whole Number Required → "Quantity must be a whole number."
+* Quantity Greater Than Zero → "Quantity must be greater than 0."
+* Quantity Exceeds Stock → "Requested quantity exceeds available stock."
+
+PERCENTAGE
+
+* Invalid Percentage → "Enter a valid percentage."
+* Percentage Range → "Percentage must be between 0 and 100."
+
+NAME
+
+* Name Required → "Name is required."
+* Invalid Name → "Name can contain letters and spaces only."
+* Name Too Short → "Name must be at least {min} characters."
+* Name Too Long → "Name cannot exceed {max} characters."
+
+USERNAME
+
+* Username Required → "Username is required."
+* Invalid Username → "Username can contain letters, numbers, and underscores only."
+* Username Exists → "Username is already taken."
+
+EMAIL
+
+* Email Required → "Email address is required."
+* Invalid Email → "Enter a valid email address."
+* Email Exists → "Email address already exists."
+* Email Domain Not Allowed → "Email domain is not allowed."
+
+PHONE
+
+* Phone Required → "Phone number is required."
+* Invalid Phone → "Enter a valid phone number."
+* Phone Length → "Phone number must contain {length} digits."
+* Phone Exists → "Phone number already exists."
+
+PASSWORD
+
+* Password Required → "Password is required."
+* Password Too Short → "Password must be at least {min} characters."
+* Missing Uppercase → "Password must contain at least one uppercase letter."
+* Missing Lowercase → "Password must contain at least one lowercase letter."
+* Missing Number → "Password must contain at least one number."
+* Missing Special Character → "Password must contain at least one special character."
+* Weak Password → "Password is too weak."
+
+CONFIRM PASSWORD
+
+* Password Mismatch → "Passwords do not match."
+
+DATE
+
+* Date Required → "Date is required."
+* Invalid Date → "Enter a valid date."
+* Future Date Not Allowed → "Future dates are not allowed."
+* Past Date Not Allowed → "Past dates are not allowed."
+* Min Date → "Date must be after {date}."
+* Max Date → "Date must be before {date}."
+
+DATE RANGE
+
+* Invalid Date Range → "End date must be after start date."
+* Overlapping Dates → "Date range overlaps with an existing record."
+
+AGE
+
+* Invalid Age → "Enter a valid age."
+* Minimum Age → "Age must be at least {min} years."
+* Maximum Age → "Age cannot exceed {max} years."
+
+URL
+
+* URL Required → "Website URL is required."
+* Invalid URL → "Enter a valid URL."
+
+ADDRESS
+
+* Address Required → "Address is required."
+* Address Too Long → "Address cannot exceed {max} characters."
+
+PINCODE / ZIPCODE
+
+* Pincode Required → "Pincode is required."
+* Invalid Pincode → "Enter a valid pincode."
+* Invalid Zipcode → "Enter a valid ZIP code."
+
+COUNTRY / STATE / CITY
+
+* Selection Required → "Please select a value."
+* Invalid Combination → "Selected country, state, and city combination is invalid."
+
+FILE UPLOAD
+
+* File Required → "Please upload a file."
+* Invalid File Type → "File type is not supported."
+* File Too Large → "File size exceeds the allowed limit."
+* Too Many Files → "You can upload a maximum of {count} files."
+
+IMAGE
+
+* Invalid Image Format → "Only JPG, JPEG, PNG, and WEBP images are allowed."
+* Image Too Large → "Image size exceeds the allowed limit."
+
+DOCUMENT
+
+* Invalid Document Format → "Only PDF, DOC, and DOCX files are allowed."
+
+CHECKBOX
+
+* Required Checkbox → "Please accept the terms and conditions."
+* Min Selection → "Select at least {count} options."
+* Max Selection → "Select no more than {count} options."
+
+RADIO BUTTON
+
+* Selection Required → "Please select an option."
+
+DROPDOWN
+
+* Selection Required → "Please select a value."
+
+INVENTORY
+
+* Out Of Stock → "Item is out of stock."
+* Insufficient Stock → "Insufficient stock available."
+
+PRICE
+
+* Invalid Price → "Enter a valid price."
+* Price Greater Than Zero → "Price must be greater than 0."
+
+DISCOUNT
+
+* Invalid Discount → "Enter a valid discount."
+* Discount Range → "Discount must be between 0 and 100."
+* Discount Exceeds Amount → "Discount cannot exceed the total amount."
+
+TAX
+
+* Invalid Tax → "Enter a valid tax percentage."
+* Tax Range → "Tax percentage must be between 0 and 100."
+
+UNIQUE FIELD
+
+* Duplicate Value → "This value already exists."
+
+SECURITY
+
+* HTML Not Allowed → "HTML content is not allowed."
+* Script Not Allowed → "Scripts are not allowed."
+* Potentially Unsafe Input → "Input contains unsafe content."
+
+CROSS-FIELD VALIDATION
+
+* Min Greater Than Max → "Minimum value cannot be greater than maximum value."
+* Max Less Than Min → "Maximum value must be greater than minimum value."
+* Start Date After End Date → "Start date must be before end date."
+* End Date Before Start Date → "End date must be after start date."
+
+

@@ -1,0 +1,121 @@
+ Interceptor vs HTTP Service
+HTTP Service								Interceptor
+
+Makes API requests							Intercepts and modifies requests or responses
+
+Usually handles specific API operations		Handles common HTTP logic centrally
+
+Example: Get user details					Example: Add an auth token
+
+What is a Guard in Angular?
+
+An Angular Guard is a mechanism used to control navigation between routes. It checks certain conditions before allowing or preventing navigation. Guards are commonly used for authentication, authorization, and preventing users from leaving pages with unsaved changes.
+
+ Why do we use Guards?
+Common uses of Angular Guards include:
+
+Authentication: Allow only logged-in users to access certain pages.
+
+Authorization: Restrict pages based on user roles, such as Admin or User.
+
+Prevent navigation: Ask users to save changes before leaving a form.
+
+Control route access: Check conditions before activating a route or loading a lazy-loaded route.
+import { CanActivateFn, Router } from '@angular/router';
+import { inject } from '@angular/core';
+
+export const authGuard: CanActivateFn = () => {
+  const router = inject(Router);
+
+  const isLoggedIn = !!localStorage.getItem('token');
+
+  if (isLoggedIn) {
+    return true;
+  }
+
+  return router.createUrlTree(['/login']);
+};
+
+true means navigation is allowed.
+
+false blocks navigation.
+
+A UrlTree redirects the user to another route.
+import { Routes } from '@angular/router';
+import { authGuard } from './auth.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
+
+export const routes: Routes = [
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [authGuard]
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  }
+];
+
+Types of Angular Guards
+Guard
+
+Purpose
+
+CanActivate
+
+Checks whether a route can be activated.
+
+CanActivateChild
+
+Checks access to child routes.
+
+CanDeactivate
+
+Checks whether a user can leave a route, such as an unsaved form.
+
+CanMatch
+
+Checks whether a route configuration can match a URL.
+Guard vs Interceptor vs Router Outlet
+Since these three concepts are commonly asked in Angular interviews, remember the difference:
+
+Feature
+
+Purpose
+
+Guard
+
+Controls whether navigation is allowed.
+
+Interceptor
+
+Intercepts HTTP requests and responses.
+
+Router Outlet
+
+Displays the component for the active route.
+
+ Why do we use an Interceptor?
+For example, suppose your Angular application calls an API to get user details.
+
+Without an interceptor, you might need to add an authentication token to every HTTP request manually.
+
+With an interceptor, you can add the token automatically to every outgoing request.
+
+Common uses include:
+
+Authentication: Add a JWT token to HTTP request headers.
+
+Error handling: Handle errors such as 401 Unauthorized or 500 Internal Server Error.
+
+Logging: Log HTTP requests and responses.
+
+Loading indicators: Show a spinner while API requests are running.
+
+Response processing: Apply common logic to HTTP responses.
+==================================
+RxJS is a JavaScript library used to handle asynchronous data streams through Observables.
+It provides operators such as map, filter, and switchMap to transform and manage data.
+In Angular, RxJS is commonly used with HTTP requests, reactive forms, event handling, and sharing data through services.

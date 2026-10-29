@@ -1,0 +1,42 @@
+What is a view? → A virtual table based on a SELECT query.
+Does it store data? → No, except indexed views.
+Table vs View? → A table stores data; a view stores a query definition.
+Can you update a view? → Yes, if it is an updatable view.
+Indexed view? → A view whose data is physically stored using an index.
+Why use views? → Simplicity, reuse, security, and abstraction.
+Security? → Restricts access to selected columns and rows.
+Limitations? → No parameters, many are not updatable, and excessive nesting can complicate maintenance.
+Performance? → Normal views don't inherently improve performance; indexed views can in specific scenarios.
+Can a view use another view? → Yes.
+
+| Table                             | View                                                               |
+| --------------------------------- | ------------------------------------------------------------------ |
+| Stores actual data                | Stores only a query definition                                     |
+| Occupies storage                  | Normally occupies almost no storage                                |
+| Can be inserted, updated, deleted | May or may not be updatable                                        |
+| Contains physical rows            | Shows data from one or more tables                                 |
+| Can have indexes                  | Normal views don't have indexes (indexed views are a special case) |
+
+
+| View                              | Stored Procedure                               |
+| --------------------------------- | ---------------------------------------------- |
+| Represents a saved `SELECT` query | Can contain multiple SQL statements            |
+| Good for reading data             | Good for business logic and data modifications |
+| Can be queried like a table       | Must be executed                               |
+| Cannot accept parameters          | Can accept parameters                          |
+| Used in joins and other queries   | Cannot be used directly in a `FROM` clause     |
+
+
+An indexed view physically stores data and maintains it automatically. They can improve performance for certain aggregation-heavy queries,
+but they come with restrictions and additional maintenance overhead.
+
+A normal view is a virtual table that stores only a SQL query. Each time you query it,
+ SQL Server retrieves the latest data from the underlying tables.
+ An indexed view, on the other hand, physically stores the query results by creating a unique clustered index on the view.
+ This can significantly improve read performance for certain queries, especially aggregations,
+
+
+
+A 300-line query doesn't automatically mean it's slow, but very complex queries can lead SQL Server to choose a poor execution plan.
+
+By breaking it into logical pieces, the optimizer may have found a better plan. but it requires extra storage and slows down INSERT, UPDATE, and DELETE operations because SQL Server must keep the indexed view synchronized with the base tables.

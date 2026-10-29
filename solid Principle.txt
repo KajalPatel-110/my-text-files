@@ -1,0 +1,237 @@
+The SOLID principles are five object-oriented design principles that help you write maintainable, scalable, and testable .NET (C#) applications.
+
+S – Single Responsibility Principle (SRP)
+
+Definition: A class should have only one reason to change.
+
+Bad Example:
+
+public class Employee
+{
+    public void CalculateSalary() { }
+
+    public void SaveToDatabase() { }
+
+    public void GenerateReport() { }
+}
+
+
+The Employee class has multiple responsibilities.
+
+Good Example:
+
+public class Employee
+{
+    public decimal Salary { get; set; }
+}
+
+public class SalaryCalculator
+{
+    public decimal Calculate(Employee employee)
+    {
+        return employee.Salary;
+    }
+}
+
+public class EmployeeRepository
+{
+    public void Save(Employee employee)
+    {
+        // Save to database
+    }
+}
+
+O – Open/Closed Principle (OCP)
+
+Definition: Software entities should be open for extension but closed for modification.
+
+Bad Example:
+
+public class Discount
+{
+    public decimal Calculate(string customerType)
+    {
+        if (customerType == "Regular")
+            return 10;
+        else if (customerType == "Premium")
+            return 20;
+
+        return 0;
+    }
+}
+
+
+Every new customer type requires modifying the class.
+
+Good Example:
+
+public interface IDiscount
+{
+    decimal Calculate();
+}
+
+public class RegularDiscount : IDiscount
+{
+    public decimal Calculate() => 10;
+}
+
+public class PremiumDiscount : IDiscount
+{
+    public decimal Calculate() => 20;
+}
+
+
+Adding a new discount only requires creating a new class.
+
+L – Liskov Substitution Principle (LSP)
+
+Definition: A derived class should be replaceable with its base class without affecting program correctness.
+
+Bad Example:
+
+public class Bird
+{
+    public virtual void Fly() { }
+}
+
+public class Ostrich : Bird
+{
+    public override void Fly()
+    {
+        throw new NotImplementedException();
+    }
+}
+
+
+An ostrich can't fly, violating LSP.
+
+Good Example:
+
+public abstract class Bird
+{
+}
+
+public interface IFlyable
+{
+    void Fly();
+}
+
+public class Sparrow : Bird, IFlyable
+{
+    public void Fly() { }
+}
+
+public class Ostrich : Bird
+{
+}
+
+I – Interface Segregation Principle (ISP)
+
+Definition: Clients should not be forced to depend on interfaces they don't use.
+
+Bad Example:
+
+public interface IWorker
+{
+    void Work();
+    void Eat();
+}
+
+
+A robot doesn't eat.
+
+Good Example:
+
+public interface IWork
+{
+    void Work();
+}
+
+public interface IEat
+{
+    void Eat();
+}
+
+public class Human : IWork, IEat
+{
+    public void Work() { }
+    public void Eat() { }
+}
+
+public class Robot : IWork
+{
+    public void Work() { }
+}
+
+D – Dependency Inversion Principle (DIP)
+
+Definition: High-level modules should depend on abstractions, not concrete implementations.
+
+Bad Example:
+
+public class Notification
+{
+    private EmailService emailService = new EmailService();
+
+    public void Send()
+    {
+        emailService.SendEmail();
+    }
+}
+
+
+The Notification class is tightly coupled to EmailService.
+
+Good Example:
+
+public interface IMessageService
+{
+    void Send();
+}
+
+public class EmailService : IMessageService
+{
+    public void Send()
+    {
+        Console.WriteLine("Email sent");
+    }
+}
+
+public class SmsService : IMessageService
+{
+    public void Send()
+    {
+        Console.WriteLine("SMS sent");
+    }
+}
+
+public class Notification
+{
+    private readonly IMessageService _messageService;
+
+    public Notification(IMessageService messageService)
+    {
+        _messageService = messageService;
+    }
+
+    public void Send()
+    {
+        _messageService.Send();
+    }
+}
+
+
+Using Dependency Injection in ASP.NET Core:
+
+builder.Services.AddScoped<IMessageService, EmailService>();
+builder.Services.AddScoped<Notification>();
+
+Summary
+Principle	Meaning	Benefit
+S	Single Responsibility	Easier maintenance and testing
+O	Open/Closed	Extend functionality without changing existing code
+L	Liskov Substitution	Subclasses behave correctly in place of base classes
+I	Interface Segregation	Small, focused interfaces reduce unnecessary dependencies
+D	Dependency Inversion	Loose coupling through abstractions and dependency injection
+
+In modern ASP.NET Core applications, Dependency Injection (DIP) and Interface Segregation (ISP) are used extensively through the built-in DI container, while SRP and OCP help organize services, repositories, and business logic into clean, maintainable components.

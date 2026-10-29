@@ -1,0 +1,1250 @@
+
+
+10/12/2025
+ Debtor 
+👉 review the Debtor  Project
+👉 worked on User logged out on tab close or page reload
+👉 worked on User logged out on browser close
+👉 And test it for all the chrome	,firefox ,Microsoft edge
+
+11/12/2025
+Debtor - Today i worked on When User is not active in current tab then logout
+PMT - And review the PMT Project
+
+12/12/2025
+OUT
+-----------
+PMT
+👉 Today I have worked on Copy button should be in jq grid Actions,
+👉 Asset Category, URL and Host/IP Address should not be mandatory for Personal Assets
+👉 And review the PMT Project
+
+15/12/2025
+OUT - Done for today.
+--------------
+PMT
+👉 Skip the Client name in Asset Main Landing Screen. Employees don't  need to know client name. 
+It is good enough to show only project name. so will reduce horizontal scroll and display
+the client name in a tooltip when hovering over the project name
+👉 Assets landing screen default ordering should be on Project Column
+
+16/12/2025
+OUT - Done for today.
+---------------------
+PMT
+👉 Remove Host/IP validation - done
+👉 If asset is critical - share action should be hide - done 
+👉 Group serching work with email too while Group Add/Edit -done
+
+17/12/2025
+OUT - Done for today.
+---------------------
+PMT
+👉 For Managed IT Service, URLs might have IP address with http or https prefix,
+no hostname. This is not allowing and giving error "URL must be valid URL"  - done
+👉 add is critical column in Assets landing screen page - done 
+👉 R&D syncing process for email notification
+
+
+18/12/2025
+OUT - Done for today.
+---------------------
+Debtor
+👉 try to logged out user while stop the iis server - pending
+
+19/12/2025
+OUT - Done for today.
+---------------------
+Debtor
+👉 try to logged out user while stop the iis server - Done
+
+
+22/12/2025
+OUT - Done for today.
+---------------------
+Debtor
+👉 Create a Reset_Inactive_Users_Job in database and test it 
+
+23/12/2025
+OUT - Done for today.
+---------------------
+PMT 
+👉 Review Quartz implementation in PMT
+
+
+24/12/2025
+OUT - Done for today.
+---------------------
+PMT 
+👉 Added Quartz job failure handling, created tables and stored procedures,and started implementing a database job for email notifications (work in progress).
+
+25/12/2025
+OUT - Done for today.
+---------------------
+PMT 
+👉 Added Quartz job failure handling, created tables and stored procedures,and started implementing a database job for email notifications (Done).
+👉 For MFA, we do not have phone numbers as authenticated method. Sometimes it could be email address. If we are not providing phone number,
+ it is not allowing to add assets and giving error. Can we provision email address and make phone number as optional field? (work in progress)
+ 
+26/12/2025
+OUT - Done for today.
+---------------------
+PMT 
+👉 For MFA, we do not have phone numbers as authenticated method. Sometimes it could be email address. If we are not providing phone number,
+it is not allowing to add assets and giving error. Can we provision email address and make phone number as optional field? (Done)
+👉 Working on to create new screen for Assets main landing page
+
+29/12/2025 - 05/12/2025
+OUT - Done for today.
+---------------------
+PMT 
+👉 Working on to create new screen for Assets main landing page (work in progress)
+
+06/12/2025 
+OUT - Done for today.
+---------------------
+PMT 
+👉 Assets main landing Screen (Done)
+👉 fix issue for no record found
+👉 If a user navigates back to this same page from another page, the previously selected filters should remain unchanged, and the selected project grid should be opened by default (Work in progress).
+
+07/12/2025 
+OUT - Done for today.
+---------------------
+PMT 
+👉 If there are no records in the table, display the message “No Record Found.” (done)
+👉 If a user navigates back to this same page from another page, the previously selected filters should remain unchanged, and the selected project grid should be opened by default. (done)
+👉 The tooltip should be displayed the same as on the old page. (done)
+👉 If the number of records exceeds 15, pagination should be enabled. (done)
+
+
+
+08/12/2025 
+OUT - Done for today.
+---------------------
+PMT 
+👉 fix issue
+👉 worked on ManageAssetPermissions screen for Employees and Group(Work in progress)
+👉 fix css related some issue with charmy
+
+09/12/2025 
+OUT - Done for today.
+---------------------
+PMT 
+👉 fix main landing screen sp issue
+👉 then modify the code according to sp
+👉 Hide search bar if data not found (done)
+
+12/01/2026
+OUT - Done for today.
+---------------------
+PMT 
+👉	Show “No Record Found” when the list is empty on all screens.(done)
+👉	Display Project Name and Asset Name when user clicks Show Password and the popup opens.(done)
+👉	When a user adds or edits asset details by clicking a new row, the newly added row must remain as is when the user clicks outside (focus out).(done)
+👉	When multiple project assets are selected on the Give Permission page and the user clicks the Back button, all selected assets must remain selected.(need to fix issue)
+
+
+13/01/2026
+OUT - Done for today.
+---------------------
+PMT 
+👉 When multiple project assets are selected on the Give Permission page and the user clicks the Back button, all selected assets must remain selected.(done)
+👉 Add reset button
+👉 Add Toggle
+
+
+16/01/2026
+OUT - Done for today.
+---------------------
+PMT 
+👉 fix toggle design
+👉 fix pagination design 
+👉 fix view password model issue  
+
+
+19/01/2026
+OUT - Done for today.
+---------------------
+PMT 
+👉 checkbox issue is fix in main landing page and test it
+👉 fix two bugs and one in panding(need to discuss with charmy)
+
+20/01/2026
+OUT - Done for today.
+---------------------
+PMT 
+👉 fix Assets URL Issue  for Assets/Index , Assets/AssetMainLanding screen
+
+
+21/01/2026
+OUT - Done for today.
+---------------------
+PMT 
+👉 Display “Personal Asset – {Asset Name}” when viewing Personal Assets (done)
+👉 fix url issue ManageAssetPermissions for Assets/Index , Assets/AssetMainLanding screen(done)
+
+22/01/2026
+OUT - Done for today.
+---------------------
+PMT 
+👉 fix view password issue for all the pages
+👉 bind mainlanding asset url with asset menu
+👉 add remark column in asset table update sp and code side(done)
+
+
+23/01/2026
+OUT - Done for today.
+---------------------
+PMT 
+👉  design Accordion to manage multiple projects/ multiple assets/ multiple employees/ multiple groups(Work in progress)
+
+
+27/01/2026
+OUT - Done for today.
+---------------------
+PMT 
+👉  modify the design to manage multiple projects/ multiple assets/ multiple employees/ multiple groups(Work in progress)
+👉  create sp and api 
+👉  Success message not displayed after copying password(done)
+
+
+
+28/01/2026
+OUT - Done for today.
+---------------------
+PMT 
+👉  modify the design to manage multiple projects/ multiple assets/ multiple employees/ multiple groups(done)
+👉  create sp and api(done) 
+👉  Application shows “Something went wrong” error when special character (') is entered in search(Work in progress)
+
+
+
+29/01/2026
+OUT - Done for today.
+---------------------
+PMT 
+👉  Application shows “Something went wrong” error when special character (') is entered in search(Done).
+👉  Grid disappears when search returns no results; requires page refresh(Done).
+👉  Assign Asset button does not work on initial launch of Personal Asset(Done).
+👉  Duplicate records displayed for Personal Assets in Asset modul(Done).
+👉  Review SkillManagement Project
+
+
+30/01/2026
+OUT - Done for today.
+---------------------
+PMT / SkillManagement
+👉  Review SkillManagement Project
+👉  Add No Change button and write api 
+👉  Duplicate records displayed for Personal Assets in Asset modul(Panding).
+
+02/02/2026
+OUT - Done for today.
+---------------------
+SkillManagement
+👉 Alter Employee Table
+👉 write api/service for active inactive group
+👉 manage in design 
+
+03/02/2026
+OUT - Done for today.
+---------------------
+SkillManagement
+👉 Create SMS_ExcludeEmployeeSkill table 
+👉 worked on my employee  skill rating
+PMT
+👉 worked on to solve bug
+
+
+04/02/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 worked on to solve bug
+👉 test it in staging environment 
+👉 add uploded file column 
+👉 solve issue while click on save 
+
+05/02/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 worked on to solve bug
+👉 test it in staging environment
+👉 add client name column in project list page 
+👉 create sp and update in code side
+
+06/02/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 R&D for how to implement smtp
+
+
+09/02/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 implement smtp
+👉 create sp  SentEmailToGroupAndEmployee,InsertEmailDeliveryLog
+👉 create table EmailDeliveryLogs
+👉 update API's 
+
+
+10/02/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 smtp implementation done with testing
+
+11/02/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review ByteAssist Project 
+👉 fix some minor issue for smtp implementation
+
+12/02/2026
+OUT - Done for today.
+------------------------
+ByteAssist
+👉 review ByteAssist  UI and database table
+
+
+13/02/2026
+OUT - Done for today.
+---------------------------
+ByteAssist
+👉 clone the ByteAssist Project 
+👉 review Implementation of email parser 
+
+16/02/2026
+OUT - Done for today.
+---------------------------
+ByteAssist
+👉 review ByteAssist Project
+
+
+17/02/2026
+OUT - Done for today.
+---------------------------
+ByteAssist
+👉 setup project in angular , install required dependencies
+👉 review MultithreadParser
+
+
+18/02/2026
+OUT - Done for today.
+---------------------------
+ByteAssist
+👉 review database table and sp's
+👉 review ByteAssist Project
+
+
+
+19/02/2026
+OUT - Done for today.
+-----------------------
+ByteAssist
+👉 R&D DoWorkEventHandler delegate, BackgroundWorker class, how it work
+👉 review ByteAssist Project and SP's
+
+
+20/02/2026
+sick leave
+
+
+23/02/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 add a userManual Button 
+👉 alter usermaster table and update code side
+👉 getting an issue related to the file path , still working on it
+
+24/02/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 userManual Button work done Based on RoleId
+
+25/02/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 alter TicketTransaction1 table
+👉 alter sp_GetTicketRecordForSupport ,sp_EditTicketRecordForSupport SP's
+👉 based on sp's update code and add priority dropdown in post reply model
+
+
+26/02/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review ByteAssist project
+
+
+27/02/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review ByteAssist project
+
+
+02/03/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review ByteAssist project
+
+
+03/03/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review ByteAssist project
+
+
+05/03/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review ByteAssist project
+
+
+06/03/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review ByteAssist project
+
+09/03/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review ByteAssist project
+
+
+10/03/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 fix issue for NOC User
+PMT
+👉 alter asset table
+👉 alter sp InsertAssets ,UpdateAssets ,GetAllAssets
+👉 create sp GetPasswordExpireEmailNotificationRecords
+
+11/03/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 add PasswordExpiryOn  column in managepersonalassets ,AssetDetails page
+👉 add email notification sechedular 
+👉 fix the email template
+ByteAssist
+👉 add priority dropdown for client
+👉 alter sp sp_EditTicketRecordForUser , sp_GetTicketRecordByTicketId
+
+12/03/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 fix priority issue for all the roles
+
+13/03/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review ByteAssist project
+
+16/03/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 review PMT project
+
+
+17/03/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 Remove IsCritical from Share Button and checkbox
+
+18/03/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 alter SentEmailToGroupAndEmployee SP
+👉 fix Email Formate for Asset Permission
+👉 Test it for all scenarios, such as employee and group permissions, when adding a new employee to a group.
+👉 did staging deployment
+
+04/05/2026
+OUT - Done for today.
+---------------------
+👉 install required  software with infra team , took data backup
+ByteAssist
+👉 Create a ticket detail report of Viera Builders for april month
+👉 review the routine of auto close ticket
+
+05/05/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 Review Autoclose Routine
+👉 Review report as per Kiran Sir Suggestion 
+Biotech
+👉 worked on Export to Excle  PurchaseOrders Record API 
+
+
+06/05/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 did PMT staging Deployment
+ISLG
+👉 Review ISLG Project
+Biotech
+👉 fix small issue in ExportExclePurchaseOrdersRecord API 
+👉 connect with infra team 
+
+
+07/05/2026
+OUT - Done for today.
+---------------------
+ISLG
+👉 Review ISLG Project
+👉 create demo project to use PrimeNg
+
+09/05/2026
+OUT - Done for today.
+---------------------
+👉 create demo project to use PrimeNg
+
+
+11/05/2026
+OUT - Done for today.
+---------------------
+👉 worked on demo project add all filter using PrimeNg
+👉 clone Biotech_EXIM_Automation  project
+👉 worked on Shipping Detail Page With dummy data
+
+
+12/05/2026
+OUT - Done for today.
+---------------------
+👉 worked Biotech_EXIM_Automation  project
+
+13/05/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 worked on pending shipping and Airwa Bill, InvoiceDetail ,shippingDetail  screen
+ISLG
+👉 Add Enhance your Profile button
+
+14/05/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 fix the design
+👉 and worked on Change password
+
+
+15/05/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 Worked on the ticket as per Kiran Sir suggestion.
+
+Biotech_EXIM_Automation
+👉 Worked on the Forgot Password task.
+
+18/05/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 Worked on the Forgot Password task (done).
+
+19/05/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 Fixed the design issues on the Change Password, Forgot Password, and Reset Password pages.
+👉 Implemented validation error messages for all password-related forms.
+
+
+ByteAssist
+👉 worked on email template for NOC and SE post reply ticket
+👉 did staging deployment
+
+
+20/05/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 Completed Consolidated Report development including database table creation,
+ stored procedures, backend APIs, frontend integration, and search/filter functionality.
+👉 email handling , roesponse model change,
+
+21/05/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 fix model structure
+👉 add shipping bill detail in consolidated report , modify stored procedures
+
+22/05/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 Implemented filters functionality
+Created stored procedures (SPs) for Customer, Company, Invoice, Shipping Number, and Bank dropdowns
+Integrated the APIs and implemented the frontend functionality for these modules
+
+25/05/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 Worked on Export to Excel functionality.
+👉 Worked on Consolidated Report Detail page, including:
+Database table creation
+Stored procedure development
+Backend API implementation
+Frontend integration
+ 
+26/05/2026
+OUT - Done for today.
+---------------------
+👉 Tested Export to Excel functionality and Consolidated Report List page with all filters.
+👉 Worked on Sales Register Extracts – Stored Procedure development and API implementation.
+
+27/05/2026
+OUT - Done for today.
+---------------------
+👉 Fixed issues related to date picker, trigger, export to Excel column sequence, and query parameters.
+👉 Worked on Sales Report API integration in the frontend.
+
+28/05/2026
+OUT - Done for today.
+---------------------
+👉 Fixed CSS issues for disabled fields in the Sales Report.
+👉 Trigger is working correctly; no changes required.
+👉 Worked on Refresh Token functionality, identified the issue, and discussed it with Aaditya.
+
+29/05/2026
+OUT - Done for today.
+---------------------
+👉 R&D on Angular concepts including Observables, subscribe, Guards, and Interceptors.
+
+
+01/06/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 worked on - https://jira.corpnet.co.in/browse/PMT-64
+
+👉 R&D on Angular forms - reactive form 
+👉 R&D on Serilog logging and the use of Enrichers
+
+
+02/06/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 Worked on Is_ShippingNumberExist API, stored procedure (SP), and frontend integration.
+👉 Performed R&D on Angular concepts including NgModules, decorators, and routing.
+
+03/06/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 table name Change SalesReport to SAPDetail
+based on this modify this  SP's model and in FrontEnd Grid ,View , ExcleSheet
+
+04/06/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 Worked on EDPMS report API, stored procedure (SP), and frontend integration.
+
+05/06/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 worked on IRM Data Report, stored procedure (SP), and frontend integration(Pending).
+
+08/06/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 worked on IRM Data Report, stored procedure (SP), and frontend integration(done) with testing.
+
+09/06/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 worked on RODTEPDBKAndGST Report, AdvanceLicense Repost, EPCGLicense Report.
+
+10/06/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 worked on RODTEPDBKAndGST Report, AdvanceLicense Report API, stored procedure (SP), and frontend integration.
+
+11/06/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 Alter the sp's ,models and in fronend side Based on SapDetail Table changes, 
+👉 create table EPCGLicense , SP's, API, and frontend integration.
+
+12/06/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 write SP's for AdvanceLicense Report, API, and frontend integration with Testing.
+
+15/06/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 Add an Export to Excel button to all three report Screen:
+   RODTEP, DBK, and GST Report
+   Advance License Report
+   EPCG License Report
+
+16/06/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 Testing completed for the following report screens:
+
+1. Open IRM – Add, Edit, and Listing screens
+2. RODEFT License screen
+3. EDPMS License screen
+4. Advance License screen
+
+
+07/07/2026
+OUT - Done for today.
+---------------------
+Biotech_EXIM_Automation
+👉 Implemented CRUD operations using lifecycle hooks.
+
+08/07/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 Reviewed the project based on the requirements.
+👉 Attended the meeting with Amit Suthar Sir.
+👉 Created a list of required changes for the Frontend, APIs, and Stored Procedures (SPs).
+
+09/07/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 create sp_ActiveInactiveFirstContactResolution SP
+👉 ALTER sp_GetTicketRecordForSupport, sp_GetTicketRecordByTicketId ,sp_GetAllTicketListForSE
+👉 create ,modify api's 
+👉 worked on fronend 
+
+10/07/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+Database
+Created stored procedure: sp_ActiveInactiveFirstContactResolution.
+Modified stored procedures for First Response Time, Total Resolution Time, and First Contact Resolution checkbox for SE:
+sp_GetAllTicketListForSE
+sp_GetAllTicketListWithSearchForSE
+
+Backend
+Created the required API.
+Modified existing APIs to support the new functionality.
+
+Frontend
+Added First Contact Resolution checkbox.
+Added Date Filter.
+Added Search and Reset buttons.
+Updated the filter section with a responsive design.
+
+Current Progress
+Currently working on the NOC User.
+
+
+13/07/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+Database
+Modified stored procedures for First Response Time, Total Resolution Time, and First Contact Resolution checkbox for NOC:
+sp_GetAllTicketListForNOC
+sp_GetAllTicketListWithSearchForNOC
+
+Modified stored procedures for Custom Filter for Client, Owner
+sp_GetAllTicketsofOwnerWithSearch
+sp_GetAllTicketListWithSearchForUser
+sp_GetTicketRecordForSupport
+sp_GetTicketRecordByTicketId
+
+Backend
+Modified existing APIs to support the new functionality.
+
+Frontend
+Added First Contact Resolution checkbox.
+Added Custome Filter.
+Added Search and Reset buttons for Owner, Client.
+Updated the filter section with a responsive design.
+Remove Support , Transfer icon from List and export to excle File
+
+14/07/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 did staging deployment 
+👉 did testing
+👉 I deploying the project to the staging environment, but I was getting an error. so connected with infra team .
+
+
+15/07/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 Performed testing in the staging environment and identified some design issues, then resolved them.
+👉 did staging deployment 
+
+16/07/2026
+OUT - Done for today.
+---------------------
+👉 Reviewed the SSMS project.
+👉 Prepared an Excel sheet, how many screens can be developed based on the requirements.
+
+17/07/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 Review Email parser
+
+20/07/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 Review MultithreadParser parser
+
+21/07/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 reviewed Zabbix file attachment issue ,but I couldn't find anything related to this in the log files or in the database.
+
+22/07/2026
+OUT - Done for today.
+---------------------
+👉 R&D on Angular concepts including Observables, subscribe, Guards, and Interceptors.
+
+28/07/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 Add Default Filter for Last 7 day in log screen.
+👉 try to optimize GetAllLogs SP
+
+28/07/2026
+OUT - Done for today.
+---------------------
+👉 R&D Understand how the view works internally in SQL Server.
+👉 Explore the Hangfire background job scheduling library and create a project to implement it.
+
+
+03/08/2026
+OUT - Done for today.
+---------------------
+👉 Explore the Hangfire background job scheduling library.
+
+04/08/2026
+OUT - Done for today.
+---------------------
+👉 Explore the MicroServices.
+
+05/08/2026
+OUT - Done for today.
+---------------------
+👉 ALTER the sp's 
+sp_GetAllTicketListForSE
+sp_GetAllTicketListWithSearchForSE
+
+sp_GetAllTicketListForNOC
+sp_GetAllTicketListWithSearchForNOC
+
+
+06/08/2026
+OUT - Done for today.
+---------------------
+👉 Explore the MicroServices.
+
+07/08/2026
+OUT - Done for today.
+---------------------
+👉 Explore the MicroServices.
+
+10/08/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 resolve Ronak mathia Query
+👉 connect with Amit sir regarding few questions 
+👉 remove First connect resolution checkbox fron ticket list page alter sp and code
+👉 add First connect resolution checkbox support ticket report page alter sp and code
+
+
+11/08/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 As per Amit Sir's suggestion, add a radio button instead of a checkbox for First Contact Resolution.
+👉 Add a CanDeactivate guard when the ticket status is Closed and Replied.
+
+12/08/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 did staging Deployment and test it
+👉 review for email parser  for zebbix alert notification 
+
+13/08/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 As per Amit Sir's suggestion move the First Contact Resolution in the Post Reply page
+
+14/08/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 did staging Deployment and test it
+👉 connect with aaditya and try to connect server for email parser but getting error 
+
+
+17/08/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review Email parser
+
+
+18/08/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review Email parser
+PMT
+👉 try to fix sonarQube warning
+
+
+19/08/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 fix sonarQube warning
+
+20/08/2026 - leave
+
+21/08/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 fix sonarQube warning
+
+24/08/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 fix sonarQube warning
+
+25/08/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 fix sonarQube warning
+
+
+26/08/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 fix sonarQube warning
+ByteAssist
+👉 Disable FCR on second reply
+
+
+27/08/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 worked on modify sp's based on scenario that is discussed with ravi(pending)
+
+31/08/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review zebbix email parser
+
+01/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review zebbix email parser
+
+02/09/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 fix sonarQube warning
+ByteAssist
+👉 review zebbix email parser
+
+03/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review zebbix email parser
+👉 Attend the call regarding the issue -the ticket was not created from the server.
+
+07/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 resolve the issue - the ticket was not created from the server.
+PMT
+👉 fix sonarQube warning
+
+08/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review zebbix email parser
+👉 update the Query as discussed with Ravi
+
+09/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review zebbix email parser
+
+
+10/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review zebbix email parser
+👉 attend the call with ravi and abhishek and did production deployment with aaditya
+
+11/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review zebbix email parser
+
+14/09/2026
+Optional leave
+
+15/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review zebbix email parser
+
+16/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review zebbix email parser
+
+17/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review zebbix email parser
+
+18/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review zebbix email parser
+
+21/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 review zebbix email parser
+
+22/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 create Login Api ,add swagger for api testing
+
+PMT
+👉 fix sonarQube warning
+
+23/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 deploy Login Api on staging 
+👉 create ByteAssist Swagger API Documentation 
+
+PMT
+👉 fix sonarQube warning
+
+24/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 Update ByteAssist Swagger API Documentation (Panding)
+
+MicroServices
+👉 Review the DEVIT_PORTAL project
+
+25/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 Update ByteAssist Swagger API Documentation (Done)
+
+28/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 attend the meeting with Harshad
+👉 Create a new User for testing and Create Ticket as per Harshad requirement
+
+29/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 attent the call with Harshad
+👉 discussed and explained the complete flow for creating Owners, Clients, and SEs.
+   We also covered which users can create tickets and how users can access  those tickets through both the UI and API.
+👉 Update ByteAssist Swagger API Documentation 
+
+30/09/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 attent the call with Harshad
+👉 Update ByteAssist Swagger API Documentation
+
+01/10/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 Attend the call with Harshad and Urvesh and discuss her query.
+👉 Check the responsiveness of all the ticket list pages.
+
+02/10/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 Check the responsiveness of all ticket list pages.
+👉 Replace the existing “Export to Excel” buttons with an appropriate Excel/export icon across all ticket list pages,
+ as discussed with Ravi.
+ 
+05/10/2026
+OUT - Done for today.
+---------------------
+Sick leave
+
+06/10/2026
+OUT - Done for today.
+---------------------
+Sick leave
+
+07/10/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 did staging Deployment and test it.
+
+08/10/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 Completed the production deployment and tested it successfully.
+👉 As per Ravi’s suggestion, I am working on to updating sp for  the new scenario.
+
+09/10/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 Improve query performance by converting the view into a function, updating all four SPs for NOC and SE, and testing the records.
+👉 Update the query for SE-to-U communications so that totalResolutionTime = 0 and firstResponseTime = 0.
+👉 Update the query for cases where SE and U belong to the same company so that totalResolutionTime = 0 and firstResponseTime = 0.
+
+12/10/2026
+OUT - Done for today.
+---------------------
+👉 R&D angular Form
+
+13/10/2026
+OUT - Done for today.
+---------------------
+👉 R&D angular Form
+
+14/10/2026
+OUT - Done for today.
+---------------------
+👉 R&D Entity Framework
+
+15/10/2026
+OUT - Done for today.
+---------------------
+👉 resolve the T22517556 ticket issue.
+👉 R&D angular
+
+16/10/2026
+OUT - Done for today.
+---------------------
+👉 R&D angular
+
+19/10/2026
+sick leave
+
+
+20/10/2026
+Dashehra
+
+21/10/2026
+OUT - Done for today.
+---------------------
+👉 R&D angular
+
+23/10/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 change the email formate for Asset  
+
+👉 R&D angular
+
+
+26/10/2026
+OUT - Done for today.
+---------------------
+PMT
+👉 change the email formate for Asset
+👉 R&D angular Rxjs
+
+27/10/2026
+OUT - Done for today.
+---------------------
+👉 R&D SQL Agents and SQL Profiler
+
+28/10/2026
+OUT - Done for today.
+---------------------
+ByteAssist
+👉 resolve the Query of Hitesh Vadoliya and Hardik Shah
